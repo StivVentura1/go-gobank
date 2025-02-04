@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"os"
 
 	_ "github.com/lib/pq"
 )
@@ -22,7 +23,8 @@ type PostgresStore struct {
 }
 
 func NewPostgresStore() (*PostgresStore, error) {
-	connStr := "user=postgres dbname=postgres password=24091995Cudi host=127.0.0.1 port=5433 sslmode=disable options='-c search_path=go-gobank'"
+	//connStr := "user=postgres dbname=postgres password=24091995Cudi host=127.0.0.1 port=5433 sslmode=disable options='-c search_path=go-gobank'"
+	connStr := os.Getenv("DATABASE_UR")
 	db, err := sql.Open("postgres", connStr)
 	log.Println("JSON API server running on port: ", db.Stats())
 	if err != nil {
