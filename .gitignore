@@ -1,0 +1,32 @@
+# Ignora i binari compilati
+/bin/
+/out/
+/*.exe
+/*.dll
+/*.so
+/*.dylib
+
+# File di configurazione Go e build cache
+*.test
+*.mod
+*.sum
+vendor/
+
+# Cache ed editor-specific files
+.idea/
+.vscode/
+*.log
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Coverage output
+*.coverprofile
+*.cov
+
+# Sistema operativo
+Thumbs.db
+desktop.ini
