@@ -23,7 +23,7 @@ type PostgresStore struct {
 }
 
 func NewPostgresStore() (*PostgresStore, error) {
-	connStr := os.Getenv("DATABASE_UR")
+	connStr := os.Getenv("DATABASE_URL")
 	db, err := sql.Open("postgres", connStr)
 	log.Println("JSON API server running on port: ", db.Stats())
 	if err != nil {
